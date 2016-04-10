@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>  
+     <title>練習Login</title> 
+      <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+<script src="js/myScript.js"></script>
+	   
+</head>  
+  <body>  
+  
+<div class="center">
+   <form action="login.php" method="post">
+   <table >
+   
+	<caption>PHP練習_登入</caption>
+
+   <tr>
+   <td> 
+   <div align="right"><a href="?act=regedit">註冊</a></div>
+   帳號 <font class="FontColorClass01"> *</font> 
+   <br>
+   <input type="text" name="account" id="account">
+   <br>
+   <p id="tip01">最少6位字元</p>
+
+    密碼 <font class="FontColorClass01"> *</font>
+	<br>
+	<input type="password" name="passwd" id="passwd" onKeyPress = "detectCapsLock(event)">
+	<br>
+	<p id="tip03">大小寫區別</p>
+	
+	 <p align="center"> <input  type="button" value="登入" onclick="Check_Login()"></p>
+   </td>
+   </tr>
+   
+   </table>
+        </form>
+		</div>
+   </body>
+</html>
