@@ -32,6 +32,15 @@ class DB extends \MVC\abstractDB
         $count = $sth->fetchColumn();
         return $count;
     }
+    public  function Exec($sql,$ArrayVar)
+    {
+        $sth = $this->_conn->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        return $sth->execute($ArrayVar);
+    }
+    public  function GetLastId()
+    {
+        return $this->_conn->lastInsertId();
+    }
     function __destruct()
     {
         $this->_conn = null;

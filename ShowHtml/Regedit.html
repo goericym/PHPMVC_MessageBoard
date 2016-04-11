@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>  
+     <title>練習Regedit</title> 
+      <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+<script src="js/myScript.js"></script>
+	   
+</head>  
+  <body>  
+  
+<div class="center">
+   <form action="?act=RegeditCheck" method="post">
+   <table >
+   
+	<caption>PHP練習_註冊</caption>
+
+   <tr>
+   <td> 
+      <div align="right"><a href="?act=Login">登入</a></div>
+   帳號 <font class="FontColorClass01"> *</font>
+   <br>
+   <input type="text" name="account" id="account">
+   <br>
+   <p id="tip01">最少6位字元</p>
+   姓名 <font class="FontColorClass01"> *</font>
+   <br>
+   <input type="text" name="username" id="username">
+   <br>
+   <p id="tip02">請填寫中文名字</p>
+   
+    密碼 <font class="FontColorClass01"> *</font>
+	<br>
+	<input type="password" name="passwd" id="passwd" onKeyPress = "detectCapsLock(event)">
+	<br>
+	<p id="tip03">大小寫區別</p>
+	確認密碼 <font class="FontColorClass01"> *</font>
+	<br>
+	<input type="password" name="check_passwd" id="check_passwd" onKeyPress = "detectCapsLock(event)">
+	<br>
+	<p id="tip04">密碼與確認密碼相符</p>
+	
+	 <p align="right"> <input  type="button" value="註冊" onclick="Check_Regedit()"> <input type="reset" value="取消"></p>
+   </td>
+   </tr>
+   
+   </table>
+        </form>
+		</div>
+   </body>
+</html>

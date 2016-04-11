@@ -8,15 +8,12 @@
  */
 
 require_once "Controller_Base.php";
-class Controller_Login extends Controller_Base
+class Controller_Regedit extends Controller_Base
 {
 
     function TODO()
     {
-        $arr=null;
-        $count=$this->model->getData($arr);
-        $this->view->assign('wel',$count);
-        $dir="ShowHtml/Login.html";
+        $dir="ShowHtml/Regedit.html";
         $this->view->show($dir);
     }
 }
