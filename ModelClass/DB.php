@@ -26,8 +26,7 @@ class DB extends \MVC\abstractDB
         $count = $sth->fetchColumn();
         return $count;
     }
-    public  function query2($sql,$ArrayVar){
-
+    public  function Count($sql,$ArrayVar){
         $sth = $this->_conn->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute($ArrayVar);
         $count = $sth->fetchColumn();
