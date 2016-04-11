@@ -13,9 +13,14 @@ class Controller_Main extends Controller_Base
 
     function TODO()
     {
+        if(!isset($_SESSION['account']))
+        {
+            $_SESSION['account']="";
+        }
         $arr=null;
-        $count=$this->model->getData($arr);
-        $this->view->assign('wel',$count);
+//        $count=$this->model->getData($arr);
+
+        $this->view->assign('account', $_SESSION['account']);
         $dir="ShowHtml/Main.php";
         $this->view->show($dir);
     }

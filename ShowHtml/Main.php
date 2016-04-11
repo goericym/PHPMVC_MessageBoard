@@ -1,9 +1,3 @@
-<?php
-	if(!isset($_SESSION['account']))
-	{
-		$_SESSION['account']="";
-	}
-?>
 <html>
 <!DOCTYPE html>
 <html>
@@ -28,11 +22,11 @@
                 <td>
                     <div align="right">
                         <?php
-    if($_SESSION['account']=="")
-    {
-        echo '<a href="?act=Login">登入</a>';
+                        if($account=="")
+                        {
+                             echo '<a href="?act=Login">登入</a>';
                         }else{
-                        echo '<a href="?act=Logout">登出</a>';
+                             echo '<a href="?act=Logout">登出</a>';
                         }
                         ?>
 
@@ -44,7 +38,7 @@
                     <div class ="NewMsg">
                     </div>
                     <?php
-    if ($_SESSION['account']!=""){
+                    if ($account!=""){
 
                     }
                     ?>
