@@ -6,7 +6,7 @@
  * Date: 2016/4/7
  * Time: 下午 03:24
  */
-
+require_once "AbstractClass/abstractView.php";
 class View_Base  extends \MVC\abstractView
 {
     public $arr = array();

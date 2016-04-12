@@ -16,7 +16,7 @@
         <input type="hidden" id="hid" name="hid" value="">
         <table >
 
-            <caption>PHP練習_留言版</caption>
+            <caption>PHP練習_留言版<?php echo $account;?></caption>
 
             <tr>
                 <td>
@@ -24,9 +24,9 @@
                         <?php
                         if($account=="")
                         {
-                             echo '<a href="?act=Login">登入</a>';
+                             echo '<a href="?action=Login">登入</a>';
                         }else{
-                             echo '<a href="?act=Logout">登出</a>';
+                             echo '<a href="?action=Logout">登出</a>';
                         }
                         ?>
 
@@ -39,7 +39,12 @@
                     </div>
                     <?php
                     if ($account!=""){
-
+                        echo '<hr color="green">
+                        <b>新留言</b> <font class="FontColorClass01">  </font>
+                        <br><br>
+                        <input type="text" name="NewMsg" id="NewMessage">
+                        <p id="tip01" style="display:none">請輸入留言!</p>
+                        <p align="right"> <input class="button" type="button" value="發佈" onclick="Check_Main()"> <input type="reset" value="取消"></p>';
                     }
                     ?>
 

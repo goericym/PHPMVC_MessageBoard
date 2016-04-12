@@ -27,7 +27,9 @@ class Controller_RegeditCheck extends Controller_Base
         $count=$this->model->getCount($RegeditArray);
 
         if ($count > 0) {
-            echo '<script>alert("'.$_POST["account"].' had the same account!"); window.location.assign("?act=Regedit");</script>';
+            $this->view->assign('account', $_POST['account']);
+            $dir="ShowHtml/RegeditError.html";
+            $this->view->show($dir);
             exit;
         }
 

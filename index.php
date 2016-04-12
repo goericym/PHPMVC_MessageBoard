@@ -7,16 +7,16 @@
  */
     try {
         session_start();
-        require_once "AbstractClass/abstractController.php";
-        require_once "AbstractClass/abstractDB.php";
-        require_once "AbstractClass/abstractModel.php";
-        require_once "AbstractClass/abstractView.php";
-//        if(@$_POST['PostAction']=="Main")
-//        {
-//            exit;
-//        }
-
-        $act=isset($_GET['act']) ? $_GET['act'] : 'Main';
+        $act=null;
+        if (@$_GET['action']!="" && @$_POST['action']=="")
+        {
+            $act=$_GET['action'];
+        }elseif(@$_GET['action']=="" && @$_POST['action']!=""){
+            $act=$_POST['action'];
+        }else{
+            $act='Main';
+        }
+        //$act=isset($_GET['action']) ? $_GET['action'] : 'Main';
         $c = "Controller_".$act;
         $m = "model_".$act;
         $v = "view_".$act;
@@ -30,7 +30,6 @@
         require_once $path_v;
 
         $main=new $c($m, $v);
-        echo  $path_c;
         $main->TODO();
     }catch(Exception $e)
     {

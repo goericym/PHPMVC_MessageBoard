@@ -13,7 +13,7 @@ function Check_Main(){
 	//post
 	$.ajax({
 		type: 'POST',
-		url: 'msgaction.php',
+		url: 'index.php',
 		data: { NewMsg : document.getElementById("NewMessage").value,
 				action : document.getElementById("action").value
                 },
@@ -62,7 +62,7 @@ function Check_ReMsg(id){
     //post
     $.ajax({
         type: 'POST',
-        url: 'msgaction.php',
+        url: 'index.php',
         data: { ReMsg : document.getElementById("ReMessage").value,
             action : 'ReMsg',
             Re_Id:id
@@ -190,9 +190,9 @@ function DoModify(id) {
 
     $.ajax({
         type: 'POST',
-        url: 'msgaction.php',
+        url: 'index.php',
         data: { Msg : document.getElementById(Msgid).value,
-            action : 'modify',
+            action : 'Modify',
             hid:id,
             MsgId:Msgid
         },
@@ -209,8 +209,8 @@ function DoDelete(id) {
     var Mainid="main"+id;
     $.ajax({
         type: 'POST',
-        url: 'msgaction.php',
-        data: { action : 'delete',
+        url: 'index.php',
+        data: { action : 'Delete',
             hid:id
         },
         dataType: 'text',
@@ -221,10 +221,10 @@ function DoDelete(id) {
     });
 }
 var AutoLoad=function(){
-	var URLs="msgaction.php";
+	var URLs="index.php";
 	$.ajax({
 		url: URLs,
-		data: { action : 'Main'},
+		data: { action : 'GetAllMsg'},
 		type:"POST",
 		dataType:'text',
 		success: function(html){

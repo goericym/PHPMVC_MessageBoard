@@ -7,7 +7,7 @@
  * Time: 下午 04:54
  */
 
-
+require_once "AbstractClass/abstractController.php";
 class Controller_Base extends \MVC\abstractController
 {
     protected $model;

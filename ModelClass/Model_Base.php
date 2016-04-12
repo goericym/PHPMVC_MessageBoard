@@ -7,7 +7,7 @@
  * Time: 下午 03:24
  */
 include_once "DB.php";
-
+require_once "AbstractClass/abstractModel.php";
 class Model_Base extends \MVC\abstractModel
 {
      public function getData($ArrayVar){

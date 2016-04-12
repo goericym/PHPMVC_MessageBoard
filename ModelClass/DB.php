@@ -7,7 +7,7 @@
  * Time: 下午 12:03
  */
 
-
+require_once "AbstractClass/abstractDB.php";
 class DB extends \MVC\abstractDB
 {
     private $_conn;
@@ -23,8 +23,8 @@ class DB extends \MVC\abstractDB
     public  function query($sql,$ArrayVar){
         $sth = $this->_conn->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $sth->execute($ArrayVar);
-        $count = $sth->fetchColumn();
-        return $count;
+        $res = $sth->fetchAll();
+        return $res;
     }
     public  function Count($sql,$ArrayVar){
         $sth = $this->_conn->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
